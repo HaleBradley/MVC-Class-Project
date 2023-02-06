@@ -1,0 +1,87 @@
+﻿@model MvcComputerManager.Models.RoomNumberViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Computers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Computers" asp-action="Index" method="get">
+    <table>
+        <tr><td>Manufacturer Serial Number: <input type="text" name="SerialNum" /></td></tr>
+        <tr><td>Start Date: <input type="date" name="StartDate" /> End Date: <input type="date" name="EndDate" /></td></tr>
+        <tr><td>Price From: <input type="number" name="PriceOne" /> Price To: <input type="number" name="PriceTwo" /></td></tr>
+        <tr><td>Room Number: <input type="text" name="RoomNumber" /></td></tr>
+    </table>
+    <input type="submit" value="Filter" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].ManufacturerSerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].OfficeRoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].OfficeLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].ComputerSpecification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].OperatingSystem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].OwnerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].InstallationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomComputers[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RoomComputers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerSerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeRoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComputerSpecification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatingSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstallationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

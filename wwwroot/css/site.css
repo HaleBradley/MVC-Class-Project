@@ -1,0 +1,57 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.table {
+    border: 2px solid;
+    background: linear-gradient(darkgray 10%, 30%, white 90%);
+}
+
+.table tr td {
+    border: 1px dotted;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+.body-bg-img {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    position: fixed;
+    z-index: -1;
+}
+
+.bg-ghostwhite {
+    background-color: ghostwhite;
+}
+
+.bg-darkgray {
+    background-color: black;
+}
+
+.computer-manager-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.display-4 {
+    font-size: 48px;
+    font-weight: bold;
+}
